@@ -60,7 +60,7 @@ flowchart TD
     
     GenPRD --> QG1{"CỔNG 1 (Quality Gate):\nUser phê duyệt PRD?"}
     QG1 -- "Cần sửa đổi" --> Interview
-    QG1 -- "Đã duyệt" --> Phase2_Arch
+    QG1 -- "Đã duyệt" --> ArchDesign
     
     subgraph Phase2_Arch ["PHASE 2: Kiến Trúc & Thiết Kế Hợp Đồng Dữ Liệu"]
         ArchDesign["Thiết kế Kiến trúc hệ thống & Lựa chọn Tech Stack\n(Clean Arch / Modular Monolith)"]
@@ -71,7 +71,7 @@ flowchart TD
     
     APISpec --> QG2{"CỔNG 2 (Quality Gate):\nUser duyệt Kiến trúc & API Contract?"}
     QG2 -- "Cần chỉnh sửa" --> ArchDesign
-    QG2 -- "Đã duyệt" --> Phase3_Env
+    QG2 -- "Đã duyệt" --> AskVenv
     
     subgraph Phase3_Env ["PHASE 3: Khởi Tạo Môi Trường & Cài Đặt Gói Dependencies"]
         AskVenv{"Hỏi User: Bạn có muốn tạo Môi Trường Ảo\n(Python .venv / Node modules / Flutter SDK) không?"}
@@ -84,7 +84,7 @@ flowchart TD
         InstallDeps --> VerifyRunner
     end
     
-    VerifyRunner --> Phase4_Plan
+    VerifyRunner --> BreakTasks
     
     subgraph Phase4_Plan ["PHASE 4: Bóc Tách Task & Đồng Bộ Quản Trị"]
         BreakTasks["Chia nhỏ User Stories thành Tasks cụ thể\n(.agent/memory/tasks.md)"]
@@ -106,13 +106,13 @@ flowchart TD
     
     MarkDone --> QG3{"CỔNG 3 (Quality Gate):\nToàn bộ Test Suite Pass 100%?"}
     QG3 -- "Chưa đạt" --> WriteTest
-    QG3 -- "Đạt" --> Phase6_Audit
+    QG3 -- "Đạt" --> AuditCheck
     
     subgraph Phase6_Audit ["PHASE 6: Rà Soát Bảo Mật & Tối Ưu Hiệu Năng"]
-        Phase6_Audit["Rà soát OWASP Top 10, Secrets Leak\nTối ưu N+1 Query, Memory Leaks, Focus Navigation"]
+        AuditCheck["Rà soát OWASP Top 10, Secrets Leak\nTối ưu N+1 Query, Memory Leaks, Focus Navigation"]
     end
     
-    Phase6_Audit --> Phase7_DevOps
+    AuditCheck --> DockerBuild
     
     subgraph Phase7_DevOps ["PHASE 7: Đóng Gói Docker & CI/CD Pipeline"]
         DockerBuild["Tạo Dockerfile multi-stage & docker-compose.yml"]
