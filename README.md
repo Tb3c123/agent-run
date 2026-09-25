@@ -19,14 +19,13 @@ Toàn bộ tài liệu chi tiết của dự án được tổ chức khoa học
 
 ---
 
-## ⚡ BẮT ĐẦU NHANH TRONG 1 BƯỚC (DÀNH CHO NGƯỜI DÙNG / ÍT CODE)
+## ⚡ BẮT ĐẦU NHANH (QUICKSTART)
 
-Bạn không cần biết gõ lệnh Terminal hay cài đặt kỹ thuật phức tạp! Chỉ cần làm theo 2 bước cực kỳ đơn giản:
+Bạn có thể cài đặt và kích hoạt bộ công cụ `.agent` vào dự án theo 2 cách dưới đây:
 
-### 1. Mở thư mục dự án bằng AI IDE
-Mở thư mục dự án mới hoặc dự án bạn muốn phát triển bằng bất kỳ trợ lý AI nào (**Google Antigravity**, **Cursor**, **Claude Code**, **Windsurf**, v.v.).
-
-### 2. Sao chép (Copy) câu Prompt chuẩn dưới đây và dán vào AI:
+### Cách 1: Cài đặt tự động qua AI (Khuyên dùng)
+1. Mở thư mục dự án của bạn bằng bất kỳ IDE AI nào (**Google Antigravity**, **Cursor**, **Claude Code**, **Windsurf**...).
+2. Sao chép (Copy) câu Prompt sau và gửi vào khung chat của AI:
 
 ```text
 Hãy đọc hướng dẫn từ GitHub repository: https://github.com/Tb3c123/agent-run.git
@@ -34,31 +33,29 @@ Thực hiện clone và cài đặt bộ công cụ .agent vào dự án này ch
 Sau khi cài đặt xong, hãy đọc hiểu file .agent/rules/AGENTS.md, kích hoạt kỹ năng 01-core/01-prd-requirements và phỏng vấn tôi từng bước để bắt đầu thực hiện dự án!
 ```
 
-👉 **Điều gì sẽ xảy ra?**
-- AI sẽ tự động đọc git, tải về bộ công cụ và cài đặt `.agent/` vào dự án của bạn.
-- AI tự động nhận diện quy tắc, đóng vai trò **Product Manager / Tech Lead** và bắt đầu phỏng vấn bạn bằng tiếng Việt về ý tưởng sản phẩm để dẫn dắt dự án từ A đến Z!
+AI sẽ tự động tải bộ công cụ về, thiết lập các file cấu hình tương thích và bắt đầu quy trình làm việc chuẩn công nghiệp cùng bạn.
 
 ---
 
-### 💻 Dành cho Lập trình viên muốn tự cài đặt bằng Terminal (Tùy chọn)
-<details>
-<summary><b>👉 Bấm vào đây để xem lệnh Terminal cài đặt thủ công</b></summary>
+### Cách 2: Cài đặt thủ công bằng dòng lệnh Terminal
+Nếu muốn tự cài đặt và kiểm soát qua Terminal:
 
 ```bash
-# 1. Clone repository về máy của bạn (chỉ cần làm 1 lần)
+# 1. Clone repository về máy (chỉ cần làm 1 lần)
 git clone https://github.com/Tb3c123/agent-run.git ~/tools/agent
 
-# 2. Cài đặt vào thư mục dự án hiện tại
-node ~/tools/agent/bin/agent-pack.js init
+# 2. Cài đặt bộ .agent vào dự án:
+# - Nếu muốn thử nghiệm ngay trong thư mục examples:
+node ~/tools/agent/bin/agent-pack.js init ./examples
 
-# Hoặc cài đặt vào một thư mục dự án mới
+# - Nếu muốn làm dự án hoàn toàn mới (tạo folder riêng):
 node ~/tools/agent/bin/agent-pack.js init ./my-new-app
 ```
-Sau đó mở dự án bằng AI IDE và chat:
+
+Sau khi cài đặt xong, mở dự án trong IDE AI và gửi Prompt bắt đầu:
 ```text
 Bắt đầu dự án: Hãy đọc hiểu các quy tắc trong .agent/rules/AGENTS.md và kích hoạt kỹ năng 01-core/01-prd-requirements để phỏng vấn tôi lập bản đặc tả yêu cầu (PRD). Chưa viết bất kỳ dòng code nào lúc này!
 ```
-</details>
 
 ---
 
@@ -148,6 +145,5 @@ flowchart TD
 
 ## 🎯 DỰ ÁN THỬ NGHIỆM MẪU (DEMO PROJECT)
 
-Dự án có sẵn một mẫu ứng dụng hoàn chỉnh đã được cài đặt bộ `.agent` để bạn làm quen:
-- 📁 Thư mục: [`examples/demo-notes-app/`](./examples/demo-notes-app/)
-- 📄 Hướng dẫn thực hành: [`examples/demo-notes-app/README.md`](./examples/demo-notes-app/README.md)
+Dự án có sẵn thư mục ví dụ thực hành trực tiếp để bạn làm quen:
+- 📁 Thư mục & Hướng dẫn thực hành: [`examples/README.md`](./examples/README.md)

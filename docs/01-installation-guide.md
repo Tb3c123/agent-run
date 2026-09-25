@@ -18,11 +18,14 @@ Tài liệu này hướng dẫn chi tiết cách tải về, cài đặt và s�
 # 1. Clone repository về máy của bạn (ví dụ vào thư mục ~/tools/agent)
 git clone https://github.com/Tb3c123/agent-run.git ~/tools/agent
 
-# 2. Di chuyển vào thư mục dự án bạn muốn phát triển
-cd /path/to/my-new-project
+# 2. Lựa chọn thư mục để cài đặt:
+# - Cách A: Thử nghiệm ngay trong thư mục examples
+cd ~/tools/agent/examples
+node ~/tools/agent/bin/agent-pack.js init .
 
-# 3. Chạy lệnh cài đặt bộ .agent vào dự án
-node ~/tools/agent/bin/agent-pack.js init
+# - Cách B: Làm dự án hoàn toàn mới (tạo folder riêng)
+mkdir ~/my-new-project && cd ~/my-new-project
+node ~/tools/agent/bin/agent-pack.js init .
 ```
 
 ### Cách 2: Cài đặt Toàn Cục (Global CLI)

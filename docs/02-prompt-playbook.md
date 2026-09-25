@@ -5,36 +5,18 @@ Tài liệu này cung cấp **bộ câu lệnh Prompt chuẩn từng bước** (
 ---
 
 ## 📑 MỤC LỤC QUY TRÌNH PROMPT
-1. [Bước 0: Cài đặt bộ Agent vào dự án](#bước-0-cài-đặt-bộ-agent-vào-dự-án)
-2. [Bước 1: Khởi động & Đặc tả yêu cầu (Phase 1: PRD)](#bước-1-khởi-động--đặc-tả-yêu-cầu-phase-1-prd)
-3. [Bước 2: Thiết kế Kiến trúc, CSDL & Hợp đồng API (Phase 2)](#bước-2-thiết-kế-kiến-trúc-csdl--hợp-đồng-api-phase-2)
-4. [Bước 3: Khởi tạo Môi trường ảo & Cài đặt Dependencies (Phase 3)](#bước-3-khởi-tạo-môi-trường-ảo--cài-đặt-dependencies-phase-3)
-5. [Bước 4: Bóc tách Task & Đồng bộ Jira (Phase 4)](#bước-4-bóc-tách-task--đồng-bộ-jira-phase-4)
-6. [Bước 5: Viết code theo chu trình TDD (Phase 5)](#bước-5-viết-code-theo-chu-trình-tdd-phase-5)
-7. [Bước 6: Rà soát Bảo mật & Tối ưu (Phase 6)](#bước-6-rà-soát-bảo-mật--tối-ưu-phase-6)
-8. [Bước 7: Đóng gói Docker & Thiết lập CI/CD (Phase 7)](#bước-7-đóng-gói-docker--thiết-lập-cicd-phase-7)
-9. [Prompt cho các tình huống đặc biệt (Thêm tính năng, Fix bug, Giả lập TV)](#các-prompt-tình-huống-đặc-biệt)
+1. [Bước 1: Khởi động & Đặc tả yêu cầu (Phase 1: PRD)](#bước-1-khởi-động--đặc-tả-yêu-cầu-phase-1-prd)
+2. [Bước 2: Thiết kế Kiến trúc, CSDL & Hợp đồng API (Phase 2)](#bước-2-thiết-kế-kiến-trúc-csdl--hợp-đồng-api-phase-2)
+3. [Bước 3: Khởi tạo Môi trường ảo & Cài đặt Dependencies (Phase 3)](#bước-3-khởi-tạo-môi-trường-ảo--cài-đặt-dependencies-phase-3)
+4. [Bước 4: Bóc tách Task & Đồng bộ Jira (Phase 4)](#bước-4-bóc-tách-task--đồng-bộ-jira-phase-4)
+5. [Bước 5: Viết code theo chu trình TDD (Phase 5)](#bước-5-viết-code-theo-chu-trình-tdd-phase-5)
+6. [Bước 6: Rà soát Bảo mật & Tối ưu (Phase 6)](#bước-6-rà-soát-bảo-mật--tối-ưu-phase-6)
+7. [Bước 7: Đóng gói Docker & Thiết lập CI/CD (Phase 7)](#bước-7-đóng-gói-docker--thiết-lập-cicd-phase-7)
+8. [Prompt cho các tình huống đặc biệt (Thêm tính năng, Fix bug, Giả lập TV)](#các-prompt-tình-huống-đặc-biệt)
 
 ---
 
-## BƯỚC 0: CÀI ĐẶT BỘ AGENT VÀO DỰ ÁN
-
-Trước khi mở IDE để chat với AI, hãy chạy lệnh cài đặt trong Terminal:
-
-```bash
-# 0. Clone bộ agent-pack về máy (nếu chưa clone)
-git clone https://github.com/Tb3c123/agent-run.git ~/tools/agent
-
-# Trường hợp 1: Dự án mới tinh
-mkdir my-new-project && cd my-new-project
-node ~/tools/agent/bin/agent-pack.js init
-
-# Trường hợp 2: Dự án đã clone từ Git về
-cd existing-repo
-node ~/tools/agent/bin/agent-pack.js init
-```
-
-Sau khi cài đặt, mở thư mục dự án bằng **Antigravity**, **Cursor** hoặc **Claude Code**.
+> 💡 **Lưu ý**: Trước khi bắt đầu, hãy đảm bảo dự án của bạn đã được cài đặt bộ `.agent/` (bằng câu Prompt tự động hoặc lệnh Terminal theo hướng dẫn tại [README gốc](../README.md)).
 
 ---
 
