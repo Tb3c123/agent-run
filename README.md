@@ -19,10 +19,31 @@ Toàn bộ tài liệu chi tiết của dự án được tổ chức khoa học
 
 ---
 
-## ⚡ BẮT ĐẦU NHANH TRONG 3 BƯỚC (QUICKSTART)
+## ⚡ BẮT ĐẦU NHANH TRONG 1 BƯỚC (DÀNH CHO NGƯỜI DÙNG / ÍT CODE)
 
-### Bước 1: Cài đặt bộ `.agent` vào dự án của bạn
-Mở Terminal và chạy lệnh:
+Bạn không cần biết gõ lệnh Terminal hay cài đặt kỹ thuật phức tạp! Chỉ cần làm theo 2 bước cực kỳ đơn giản:
+
+### 1. Mở thư mục dự án bằng AI IDE
+Mở thư mục dự án mới hoặc dự án bạn muốn phát triển bằng bất kỳ trợ lý AI nào (**Google Antigravity**, **Cursor**, **Claude Code**, **Windsurf**, v.v.).
+
+### 2. Sao chép (Copy) câu Prompt chuẩn dưới đây và dán vào AI:
+
+```text
+Hãy đọc hướng dẫn từ GitHub repository: https://github.com/Tb3c123/agent-run.git
+Thực hiện clone và cài đặt bộ công cụ .agent vào dự án này cho tôi. 
+Sau khi cài đặt xong, hãy đọc hiểu file .agent/rules/AGENTS.md, kích hoạt kỹ năng 01-core/01-prd-requirements và phỏng vấn tôi từng bước để bắt đầu thực hiện dự án!
+```
+
+👉 **Điều gì sẽ xảy ra?**
+- AI sẽ tự động đọc git, tải về bộ công cụ và cài đặt `.agent/` vào dự án của bạn.
+- AI tự động nhận diện quy tắc, đóng vai trò **Product Manager / Tech Lead** và bắt đầu phỏng vấn bạn bằng tiếng Việt về ý tưởng sản phẩm để dẫn dắt dự án từ A đến Z!
+
+---
+
+### 💻 Dành cho Lập trình viên muốn tự cài đặt bằng Terminal (Tùy chọn)
+<details>
+<summary><b>👉 Bấm vào đây để xem lệnh Terminal cài đặt thủ công</b></summary>
+
 ```bash
 # 1. Clone repository về máy của bạn (chỉ cần làm 1 lần)
 git clone https://github.com/Tb3c123/agent-run.git ~/tools/agent
@@ -33,17 +54,11 @@ node ~/tools/agent/bin/agent-pack.js init
 # Hoặc cài đặt vào một thư mục dự án mới
 node ~/tools/agent/bin/agent-pack.js init ./my-new-app
 ```
-
-### Bước 2: Mở dự án bằng IDE AI
-Mở thư mục dự án vừa cài đặt bằng **Antigravity**, **Cursor** hoặc **Claude Code**. Bộ cài đặt đã tự động tạo sẵn các adapter tương thích (`GEMINI.md`, `CLAUDE.md`, `.cursorrules`).
-
-### Bước 3: Gửi câu Prompt đầu tiên cho AI
-Copy câu lệnh chuẩn từ [Prompt Playbook](./docs/02-prompt-playbook.md) và dán vào khung chat của AI:
-
+Sau đó mở dự án bằng AI IDE và chat:
 ```text
-Bắt đầu dự án: Hãy đọc hiểu các quy tắc trong .agent/rules/AGENTS.md và kích hoạt kỹ năng 01-core/01-prd-requirements. 
-Hãy đóng vai Product Manager / Tech Lead, phỏng vấn tôi từng bước để làm rõ: bài toán cốt lõi, người dùng mục tiêu (personas), phạm vi MVP và các tiêu chí nghiệm thu (acceptance criteria). Chưa viết bất kỳ dòng code nào lúc này!
+Bắt đầu dự án: Hãy đọc hiểu các quy tắc trong .agent/rules/AGENTS.md và kích hoạt kỹ năng 01-core/01-prd-requirements để phỏng vấn tôi lập bản đặc tả yêu cầu (PRD). Chưa viết bất kỳ dòng code nào lúc này!
 ```
+</details>
 
 ---
 
@@ -135,4 +150,4 @@ flowchart TD
 
 Dự án có sẵn một mẫu ứng dụng hoàn chỉnh đã được cài đặt bộ `.agent` để bạn làm quen:
 - 📁 Thư mục: [`examples/demo-notes-app/`](./examples/demo-notes-app/)
-- 📄 Hướng dẫn thực hành: [`examples/demo-notes-app/GUIDE_THU_NGHIEM.md`](./examples/demo-notes-app/GUIDE_THU_NGHIEM.md)
+- 📄 Hướng dẫn thực hành: [`examples/demo-notes-app/README.md`](./examples/demo-notes-app/README.md)
