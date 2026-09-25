@@ -22,13 +22,16 @@ Tài liệu này cung cấp **bộ câu lệnh Prompt chuẩn từng bước** (
 Trước khi mở IDE để chat với AI, hãy chạy lệnh cài đặt trong Terminal:
 
 ```bash
+# 0. Clone bộ agent-pack về máy (nếu chưa clone)
+git clone https://github.com/Tb3c123/agent-run.git ~/tools/agent
+
 # Trường hợp 1: Dự án mới tinh
 mkdir my-new-project && cd my-new-project
-node /path/to/agent/bin/agent-pack.js init
+node ~/tools/agent/bin/agent-pack.js init
 
 # Trường hợp 2: Dự án đã clone từ Git về
 cd existing-repo
-node /path/to/agent/bin/agent-pack.js init
+node ~/tools/agent/bin/agent-pack.js init
 ```
 
 Sau khi cài đặt, mở thư mục dự án bằng **Antigravity**, **Cursor** hoặc **Claude Code**.

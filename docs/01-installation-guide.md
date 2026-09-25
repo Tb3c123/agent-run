@@ -16,7 +16,7 @@ Tài liệu này hướng dẫn chi tiết cách tải về, cài đặt và s�
 ### Cách 1: Tải về từ Git và Sử dụng Cục Bộ (Khuyên dùng trong nội bộ)
 ```bash
 # 1. Clone repository về máy của bạn (ví dụ vào thư mục ~/tools/agent)
-git clone <url-to-this-repo> ~/tools/agent
+git clone https://github.com/Tb3c123/agent-run.git ~/tools/agent
 
 # 2. Di chuyển vào thư mục dự án bạn muốn phát triển
 cd /path/to/my-new-project

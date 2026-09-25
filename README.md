@@ -24,11 +24,14 @@ Toàn bộ tài liệu chi tiết của dự án được tổ chức khoa học
 ### Bước 1: Cài đặt bộ `.agent` vào dự án của bạn
 Mở Terminal và chạy lệnh:
 ```bash
-# Cài đặt vào thư mục dự án hiện tại
-node /path/to/agent/bin/agent-pack.js init
+# 1. Clone repository về máy của bạn (chỉ cần làm 1 lần)
+git clone https://github.com/Tb3c123/agent-run.git ~/tools/agent
+
+# 2. Cài đặt vào thư mục dự án hiện tại
+node ~/tools/agent/bin/agent-pack.js init
 
 # Hoặc cài đặt vào một thư mục dự án mới
-node /path/to/agent/bin/agent-pack.js init ./my-new-app
+node ~/tools/agent/bin/agent-pack.js init ./my-new-app
 ```
 
 ### Bước 2: Mở dự án bằng IDE AI
