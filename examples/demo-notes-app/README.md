@@ -1,7 +1,6 @@
-# 🚀 HƯỚNG DẪN THỬ NGHIỆM DỰ ÁN MẪU: QUICKNOTES
+# 🚀 DỰ ÁN MẪU THỬ NGHIỆM: QUICKNOTES API
 
-Chào bạn! Thư mục này (`examples/demo-notes-app/`) đã được cài sẵn bộ `.agent/`.
-Dưới đây là kịch bản thử nghiệm từng bước để bạn thấy cách AI đọc hiểu các kỹ năng và dẫn dắt dự án từ đầu đến cuối một cách chuyên nghiệp.
+Thư mục này (`examples/demo-notes-app/`) là một dự án mẫu hoàn toàn sạch sẽ (chưa cài đặt bộ `.agent/`), giúp bạn thử nghiệm quy trình AI tự động hóa từ khâu cài đặt cho đến lập trình hoàn thiện.
 
 ---
 
@@ -11,13 +10,33 @@ Dưới đây là kịch bản thử nghiệm từng bước để bạn thấy 
 
 ---
 
-## 🛠️ CÁC BƯỚC THỬ NGHIỆM VỚI AI
+## 🛠️ CÁC BƯỚC THỬ NGHIỆM
 
-### BƯỚC 1: KHỞI ĐỘNG & LẬP BẢN ĐẶC TẢ (PHASE 1 - PRD)
-Mở dự án này trong Antigravity (hoặc Cursor / Claude Code), nhập câu lệnh đầu tiên vào khung chat:
+### BƯỚC 0: CÀI ĐẶT BỘ `.AGENT/` VÀO DỰ ÁN
+
+#### 👉 Cách 1: Dành cho người ít code (Dùng Prompt với AI)
+1. Mở thư mục `examples/demo-notes-app/` bằng AI IDE (**Google Antigravity**, **Cursor**, **Claude Code**, **Windsurf**).
+2. Dán câu Prompt sau vào khung chat:
 
 ```text
-Bắt đầu dự án: Hãy đọc hiểu các quy tắc trong .agent/rules/AGENTS.md và kích hoạt kĩ năng 01-prd-requirements để phỏng vấn tôi lập bản PRD cho ứng dụng QuickNotes!
+Hãy đọc hướng dẫn từ GitHub repository: https://github.com/Tb3c123/agent-run.git
+Thực hiện cài đặt bộ công cụ .agent vào thư mục này cho tôi. 
+Sau khi cài đặt xong, hãy đọc hiểu file .agent/rules/AGENTS.md, kích hoạt kỹ năng 01-core/01-prd-requirements và phỏng vấn tôi từng bước để bắt đầu làm dự án QuickNotes!
+```
+
+#### 👉 Cách 2: Dành cho lập trình viên (Chạy bằng Terminal)
+Mở Terminal tại thư mục này và chạy:
+```bash
+node ../../bin/agent-pack.js init .
+```
+
+---
+
+### BƯỚC 1: KHỞI ĐỘNG & LẬP BẢN ĐẶC TẢ (PHASE 1 - PRD)
+Sau khi bộ `.agent/` được cài đặt, gửi prompt cho AI:
+
+```text
+Bắt đầu dự án: Hãy đọc hiểu các quy tắc trong .agent/rules/AGENTS.md và kích hoạt kĩ năng 01-core/01-prd-requirements để phỏng vấn tôi lập bản PRD cho ứng dụng QuickNotes! Chưa viết bất kỳ dòng code nào lúc này!
 ```
 
 👉 **Điều gì sẽ xảy ra?**
@@ -30,7 +49,7 @@ Bắt đầu dự án: Hãy đọc hiểu các quy tắc trong .agent/rules/AGEN
 ---
 
 ### BƯỚC 2: THIẾT KẾ KIẾN TRÚC & HỢP ĐỒNG API (PHASE 2)
-Sau khi AI tạo xong PRD, bạn gõ tiếp:
+Sau khi AI tạo xong PRD, bạn gửi tiếp:
 
 ```text
 PRD đã chuẩn. Hãy kích hoạt kĩ năng 02-system-architecture, 03-database-strategy và 04-api-specification để thiết kế kiến trúc và hợp đồng API!
@@ -45,7 +64,7 @@ PRD đã chuẩn. Hãy kích hoạt kĩ năng 02-system-architecture, 03-databas
 ---
 
 ### BƯỚC 3: CÀI ĐẶT MÔI TRƯỜNG & CHẠY SMOKE TEST (PHASE 3)
-Sau khi bạn duyệt kiến trúc, bạn gõ:
+Sau khi bạn duyệt kiến trúc, bạn gửi:
 
 ```text
 Kiến trúc và API hợp đồng rất tốt. Hãy tiến hành Phase 3: Setup môi trường và cài đặt dependencies.
@@ -53,35 +72,28 @@ Kiến trúc và API hợp đồng rất tốt. Hãy tiến hành Phase 3: Setup
 
 👉 **Điều gì sẽ xảy ra?**
 - AI sẽ kích hoạt kĩ năng `05-environment-setup`.
-- AI sẽ tuân thủ luật và **hỏi ý kiến bạn**:
+- AI tuân thủ nguyên tắc và **hỏi ý kiến bạn**:
   > *"Bạn có muốn tôi tạo môi trường ảo và cài đặt các thư viện cần thiết không?"*
 - Bạn trả lời: *"Đồng ý, hãy cài đặt"*.
-- AI sẽ cài đặt các packages cần thiết và chạy Smoke Test xác nhận test runner hoạt động.
+- AI cài đặt các packages cần thiết và chạy Smoke Test xác nhận test runner hoạt động.
 
 ---
 
-### BƯỚC 4: BÓC TÁCH TASK & CODE THEO TDD (PHASE 4 & 5)
-Bạn gõ:
-
+### BƯỚC 4: BÓC TÁCH TASK & PHÁT TRIỂN THEO TDD (PHASE 4 & 5)
 ```text
-Hãy bóc tách các task vào .agent/memory/tasks.md và bắt đầu triển khai code theo quy trình TDD (viết test trước, code sau)!
+Môi trường đã sẵn sàng. Hãy kích hoạt kĩ năng 06-testing-qa và lập danh sách tasks vào .agent/memory/tasks.md, sau đó viết test trước rồi mới viết code (TDD).
 ```
 
 👉 **Điều gì sẽ xảy ra?**
-- AI chia các đầu việc cụ thể vào `tasks.md`.
-- Kích hoạt kỹ năng TDD (`06-testing-qa`) kết hợp kỹ năng stack tương ứng:
-  1. Viết test case cho Note Service (`test/notes.test.js`).
-  2. Chạy test -> Test Fail (Red).
-  3. Viết mã nguồn nghiệp vụ xử lý Note -> Chạy test -> Test Pass (Green).
-  4. Đánh dấu `[x]` vào `tasks.md`.
+- AI bóc tách các task nhỏ, tự viết Unit Test trước (Test Fail / Red).
+- Viết code nghiệp vụ để pass test (Test Pass / Green).
+- Đánh dấu `[x]` vào `tasks.md`.
 
 ---
 
-### BƯỚC 5: KIỂM TRA TIẾN ĐỘ DỰ ÁN
-Bất kỳ lúc nào, bạn có thể mở terminal và gõ:
-
-```bash
-node ../../bin/agent-pack.js status
+### BƯỚC 5: RÀ SOÁT BẢO MẬT & ĐÓNG GÓI DOCKER (PHASE 6 & 7)
+```text
+Toàn bộ test đã pass. Hãy kích hoạt 07-security-audit và 08-devops-deployment để rà soát an toàn và tạo Dockerfile hoàn chỉnh!
 ```
 
-Hệ thống sẽ hiển thị bảng trạng thái trực quan các Phase đã hoàn thành (✅) và đang thực hiện (🔄)!
+👉 **Kết quả cuối cùng:** Bạn có một ứng dụng QuickNotes chuẩn công nghiệp, có test đầy đủ, container hóa Docker và sẵn sàng deploy production!

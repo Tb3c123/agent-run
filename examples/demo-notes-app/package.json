@@ -1,0 +1,15 @@
+{
+  "name": "quicknotes-api",
+  "version": "1.0.0",
+  "description": "Dự án mẫu để thử nghiệm cài đặt và vận hành bộ Agent-Pack",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "demo",
+    "agent-pack",
+    "quicknotes"
+  ],
+  "license": "MIT"
+}
