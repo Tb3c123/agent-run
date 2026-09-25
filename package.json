@@ -1,0 +1,31 @@
+{
+  "name": "agent-pack",
+  "version": "1.0.0",
+  "description": "Full-stack SDLC AI Agent Kit installer for end-to-end software development",
+  "main": "src/index.js",
+  "bin": {
+    "agent-pack": "./bin/agent-pack.js"
+  },
+  "scripts": {
+    "start": "node ./bin/agent-pack.js",
+    "init": "node ./bin/agent-pack.js init",
+    "doctor": "node ./bin/agent-pack.js doctor",
+    "test": "node test/test-installer.js"
+  },
+  "keywords": [
+    "ai",
+    "agent",
+    "antigravity",
+    "claude-code",
+    "cursor",
+    "sdlc",
+    "fullstack",
+    "skills",
+    "scaffold"
+  ],
+  "author": "TB3C Team",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

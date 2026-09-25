@@ -1,0 +1,44 @@
+{
+  "projectName": "my-project",
+  "version": "1.0.0",
+  "detectedStack": "Universal Fullstack",
+  "currentPhase": "PHASE_1_REQUIREMENTS",
+  "phases": {
+    "PHASE_1_REQUIREMENTS": {
+      "status": "NOT_STARTED",
+      "deliverable": ".agent/memory/PRD.md",
+      "qualityGate": "User explicit approval of PRD"
+    },
+    "PHASE_2_ARCHITECTURE": {
+      "status": "NOT_STARTED",
+      "deliverable": ".agent/memory/ARCHITECTURE.md & openapi.yaml",
+      "qualityGate": "User explicit approval of Architecture & Database/API Contract"
+    },
+    "PHASE_3_ENVIRONMENT": {
+      "status": "NOT_STARTED",
+      "deliverable": "Virtual environment & installed dependencies",
+      "qualityGate": "Prompt user before venv, smoke test runner verified"
+    },
+    "PHASE_4_PLANNING": {
+      "status": "NOT_STARTED",
+      "deliverable": ".agent/memory/tasks.md",
+      "qualityGate": "Tasks broken down into atomic, testable deliverables"
+    },
+    "PHASE_5_IMPLEMENTATION": {
+      "status": "NOT_STARTED",
+      "deliverable": "Working features verified via TDD",
+      "qualityGate": "100% test suite pass rate"
+    },
+    "PHASE_6_SECURITY_AUDIT": {
+      "status": "NOT_STARTED",
+      "deliverable": "Clean security audit report",
+      "qualityGate": "Zero OWASP Top 10 vulnerabilities or secret leaks"
+    },
+    "PHASE_7_DEVOPS_SHIP": {
+      "status": "NOT_STARTED",
+      "deliverable": "Dockerfile, docker-compose, CI/CD pipeline",
+      "qualityGate": "Docker build succeeds and CI passes"
+    }
+  },
+  "activeSkills": []
+}

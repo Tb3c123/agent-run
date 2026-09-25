@@ -1,0 +1,10 @@
+{
+  "entries": [
+    {
+      "path": ".agent/skills/01-core"
+    },
+    {
+      "path": ".agent/skills/02-stacks"
+    }
+  ]
+}
