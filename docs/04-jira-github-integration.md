@@ -59,4 +59,4 @@ node .agent/scripts/sync-tickets.js --push
 ---
 
 ## 3. AN TOÀN BẢO MẬT
-File `.agent/.env.agent` được CLI tự động thêm vào `.gitignore`. Tuyệt đối không bao giờ xóa dòng này khỏi `.gitignore` để tránh đẩy token lên repository công khai.
+Toàn bộ thư mục `.agent/` và file chứa token `.agent/.env.agent` được CLI tự động thêm vào `.gitignore` của dự án mục tiêu. Nhờ đó toàn bộ hệ thống Agent-Pack chỉ hoạt động cục bộ trên máy lập trình viên, tuyệt đối không bị commit hay đẩy (push) vào repository mã nguồn của dự án.

@@ -14,3 +14,7 @@ node_modules/
 .env
 .env.local
 .env.*.local
+
+# Local .agent instances (excluding templates)
+/.agent/
+/.agent

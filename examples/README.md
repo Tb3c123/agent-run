@@ -16,6 +16,19 @@ Sau khi đã cài đặt bộ `.agent/` vào thư mục này (theo hướng dẫ
 
 ## 🛠️ CÁC BƯỚC THỰC HIỆN VỚI AI
 
+### BƯỚC 0: KHẢO SÁT CẤU HÌNH BAN ĐẦU (PHASE 0: CONFIG CHECK)
+Mở dự án này trong AI IDE (**Antigravity**, **Cursor**, **Claude Code**...), copy câu prompt này và gửi cho AI:
+
+```text
+Bắt đầu dự án: Hãy đọc hiểu các quy tắc trong .agent/rules/AGENTS.md. Trước khi lập PRD, hãy kiểm tra và hỏi tôi xem có cần thiết lập cấu hình tích hợp nào không (như Jira, GitHub, Figma, Giả lập Android/TV, API keys trong .agent/.env.agent) để chuẩn bị trước cho dự án!
+```
+
+👉 **Điều gì sẽ xảy ra?**
+- AI sẽ chủ động hỏi bạn có cần tích hợp Jira/GitHub để quản lý task, token Figma, hoặc khởi tạo máy ảo giả lập không.
+- Đối với ứng dụng QuickNotes thử nghiệm này, bạn chỉ cần trả lời: *"Chưa cần cấu hình, hãy bắt đầu phỏng vấn làm PRD ngay!"*
+
+---
+
 ### BƯỚC 1: KHỞI ĐỘNG & LẬP BẢN ĐẶC TẢ (PHASE 1 - PRD)
 Mở dự án này trong AI IDE (**Antigravity**, **Cursor**, **Claude Code**...), copy câu prompt này và gửi cho AI:
 

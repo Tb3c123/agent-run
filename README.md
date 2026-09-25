@@ -30,10 +30,10 @@ Bạn có thể cài đặt và kích hoạt bộ công cụ `.agent` vào dự 
 ```text
 Hãy đọc hướng dẫn từ GitHub repository: https://github.com/Tb3c123/agent-run.git
 Thực hiện clone và cài đặt bộ công cụ .agent vào dự án này cho tôi. 
-Sau khi cài đặt xong, hãy đọc hiểu file .agent/rules/AGENTS.md, kích hoạt kỹ năng 01-core/01-prd-requirements và phỏng vấn tôi từng bước để bắt đầu thực hiện dự án!
+Sau khi cài đặt xong, hãy đọc hiểu file .agent/rules/AGENTS.md, hỏi tôi xem có cần thiết lập cấu hình tích hợp nào không (Jira, GitHub, Figma, Giả lập Android/TV, API keys trong .agent/.env.agent), sau đó kích hoạt kỹ năng 01-core/01-prd-requirements và phỏng vấn tôi từng bước để bắt đầu thực hiện dự án!
 ```
 
-AI sẽ tự động tải bộ công cụ về, thiết lập các file cấu hình tương thích và bắt đầu quy trình làm việc chuẩn công nghiệp cùng bạn.
+AI sẽ tự động tải bộ công cụ về, thiết lập các file cấu hình tương thích, khảo sát nhu cầu cấu hình ban đầu và bắt đầu quy trình làm việc chuẩn công nghiệp cùng bạn.
 
 ---
 
@@ -54,7 +54,7 @@ node ~/tools/agent/bin/agent-pack.js init ./my-new-app
 
 Sau khi cài đặt xong, mở dự án trong IDE AI và gửi Prompt bắt đầu:
 ```text
-Bắt đầu dự án: Hãy đọc hiểu các quy tắc trong .agent/rules/AGENTS.md và kích hoạt kỹ năng 01-core/01-prd-requirements để phỏng vấn tôi lập bản đặc tả yêu cầu (PRD). Chưa viết bất kỳ dòng code nào lúc này!
+Bắt đầu dự án: Hãy đọc hiểu file .agent/rules/AGENTS.md. Trước khi lập PRD, hãy kiểm tra và hỏi tôi xem có cần thiết lập cấu hình tích hợp nào không (Jira, GitHub, Figma, Giả lập Android/TV, API keys trong .agent/.env.agent) để chuẩn bị trước cho dự án!
 ```
 
 ---
@@ -66,10 +66,13 @@ Quy trình tuần tự mà AI bắt buộc phải tuân theo khi nhận diện b
 ```mermaid
 flowchart TD
     Start(["Khởi tạo: Ý tưởng dự án của User"]) --> StepInit["1. Cài đặt bộ .agent/\n(agent-pack init)"]
-    StepInit --> CheckEnv["2. Cấu hình .agent/.env.agent\n(GitHub, Jira, Token bảo mật)"]
+    StepInit --> AskConfig{"2. AI khảo sát:\nCần thiết lập cấu hình tích hợp không?\n(Jira, GitHub, Figma, Emulators)"}
+    AskConfig -- "Có nhu cầu" --> SetupConfig["Điền token vào .agent/.env.agent\nhoặc khởi tạo setup-emulators.sh"]
+    AskConfig -- "Bỏ qua / Chưa cần" --> Interview
+    SetupConfig --> Interview
     
     subgraph Phase1_PRD ["PHASE 1: Khám Phá & Đặc Tả Nghiệp Vụ (PRD)"]
-        CheckEnv --> Interview["AI phỏng vấn User làm rõ nghiệp vụ\n(User Personas, Core Scope, MVP)"]
+        Interview["AI phỏng vấn User làm rõ nghiệp vụ\n(User Personas, Core Scope, MVP)"]
         Interview --> GenPRD["Tạo file .agent/memory/PRD.md"]
     end
     

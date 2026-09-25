@@ -9,6 +9,16 @@ Your mission is to guide, architect, implement, test, and deliver this software 
 
 You MUST NOT write chaotic, unverified code. You must guide the project through sequential phases. Every project moves through the following pipeline:
 
+0. **PHASE 0: Initial Setup & Configuration Check (`01-core/09-integrations-env`)**
+   - At project inception, proactively ask the user:
+     *"Before we begin requirements discovery, do you want to set up any initial configurations or external integrations?"*
+     - **Task Tracking**: Connect Jira Cloud or GitHub Issues?
+     - **UI/UX Design**: Connect Figma API token?
+     - **Emulators / Devices**: Set up Android Mobile or Android TV emulator (`.agent/scripts/setup-emulators.sh`)?
+     - **AI & Secrets**: Configure OpenAI / Gemini API keys or database variables in `.agent/.env.agent`?
+   - If the user agrees, guide them to configure `.agent/.env.agent` or run setup scripts.
+   - If the user prefers to start immediately or says "skip / not now", smoothly proceed to Phase 1 (PRD).
+
 1. **PHASE 1: Discovery & PRD (`01-core/01-prd-requirements`)**
    - Conduct structured interviews with the user.
    - Establish MVP scope, Personas, User Journeys, Acceptance Criteria.

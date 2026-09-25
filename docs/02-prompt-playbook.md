@@ -5,6 +5,7 @@ Tài liệu này cung cấp **bộ câu lệnh Prompt chuẩn từng bước** (
 ---
 
 ## 📑 MỤC LỤC QUY TRÌNH PROMPT
+0. [Bước 0: Khảo sát & Thiết lập Cấu hình (Phase 0: Config Check)](#bước-0-khảo-sát--thiết-lập-cấu-hình-phase-0-config-check)
 1. [Bước 1: Khởi động & Đặc tả yêu cầu (Phase 1: PRD)](#bước-1-khởi-động--đặc-tả-yêu-cầu-phase-1-prd)
 2. [Bước 2: Thiết kế Kiến trúc, CSDL & Hợp đồng API (Phase 2)](#bước-2-thiết-kế-kiến-trúc-csdl--hợp-đồng-api-phase-2)
 3. [Bước 3: Khởi tạo Môi trường ảo & Cài đặt Dependencies (Phase 3)](#bước-3-khởi-tạo-môi-trường-ảo--cài-đặt-dependencies-phase-3)
@@ -17,6 +18,28 @@ Tài liệu này cung cấp **bộ câu lệnh Prompt chuẩn từng bước** (
 ---
 
 > 💡 **Lưu ý**: Trước khi bắt đầu, hãy đảm bảo dự án của bạn đã được cài đặt bộ `.agent/` (bằng câu Prompt tự động hoặc lệnh Terminal theo hướng dẫn tại [README gốc](../README.md)).
+
+---
+
+## BƯỚC 0: KHẢO SÁT & THIẾT LẬP CẤU HÌNH (PHASE 0: CONFIG CHECK)
+
+Trước khi bắt đầu đặc tả nghiệp vụ, bạn có thể yêu cầu AI khảo sát xem dự án có cần kết nối các công cụ quản trị hoặc môi trường bên ngoài không.
+
+### 💬 Prompt 0.1: Yêu cầu AI kiểm tra cấu hình ban đầu
+Copy và dán vào khung chat của AI:
+
+```text
+Bắt đầu dự án: Hãy đọc hiểu file .agent/rules/AGENTS.md. Trước khi lập PRD, hãy kiểm tra và hỏi tôi xem dự án có cần thiết lập cấu hình tích hợp nào không (như kết nối Jira Cloud, GitHub Issues, Figma, máy ảo giả lập Android/TV, hoặc các API keys trong .agent/.env.agent) để chuẩn bị trước cho dự án!
+```
+
+> **Hành vi của AI**: AI sẽ đóng vai Tech Lead, liệt kê 4 nhóm cấu hình và hỏi bạn:
+> 1. **Quản lý Task**: Có cần đồng bộ với Jira Cloud hoặc GitHub Issues không?
+> 2. **Thiết kế UI/UX**: Có token Figma để import thiết kế không?
+> 3. **Môi trường & Thiết bị**: Dự án có cần chạy máy ảo Android Mobile hoặc Android TV 10-foot UI không?
+> 4. **API Keys & Biến môi trường**: Có cần điền OpenAI/Gemini/Anthropic API keys trong `.agent/.env.agent` không?
+> 
+> 👉 **Nếu bạn cần cấu hình**: AI sẽ hướng dẫn bạn điền thông tin vào `.agent/.env.agent` hoặc chạy script khởi tạo máy ảo.  
+> 👉 **Nếu chưa cần ngay**: Bạn chỉ cần trả lời *"Bỏ qua cấu hình, bắt đầu làm PRD ngay"* để chuyển sang Bước 1.
 
 ---
 

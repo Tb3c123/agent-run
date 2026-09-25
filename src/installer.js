@@ -128,19 +128,30 @@ ${agentPath}
 }
 
 /**
- * Ensure .agent/.env.agent is ignored in target .gitignore
+ * Ensure .agent/ directory and credentials are ignored in target .gitignore
  */
 function updateGitignore(targetDir) {
   const gitignorePath = path.join(targetDir, '.gitignore');
-  const ignoreEntry = '\n# Agent-Pack credentials\n.agent/.env.agent\n';
+  const ignoreEntries = [
+    '# Agent-Pack (Local AI Assistant & SDLC tools)',
+    '.agent/',
+    '.agent',
+    '.agent/.env.agent'
+  ];
 
   if (fs.existsSync(gitignorePath)) {
     const content = fs.readFileSync(gitignorePath, 'utf-8');
-    if (!content.includes('.agent/.env.agent')) {
-      fs.appendFileSync(gitignorePath, ignoreEntry, 'utf-8');
+    const toAppend = [];
+    for (const entry of ignoreEntries) {
+      if (!entry.startsWith('#') && !content.includes(entry)) {
+        toAppend.push(entry);
+      }
+    }
+    if (toAppend.length > 0) {
+      fs.appendFileSync(gitignorePath, `\n# Agent-Pack (Local AI Assistant & SDLC tools)\n${toAppend.join('\n')}\n`, 'utf-8');
     }
   } else {
-    fs.writeFileSync(gitignorePath, ignoreEntry, 'utf-8');
+    fs.writeFileSync(gitignorePath, `${ignoreEntries.join('\n')}\n`, 'utf-8');
   }
 }
 

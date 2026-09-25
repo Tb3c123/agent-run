@@ -108,10 +108,10 @@ try {
   }
   console.log('   ✅ GEMINI.md adapter verified.');
 
-  console.log('4. Verifying .gitignore includes .agent/.env.agent...');
+  console.log('4. Verifying .gitignore includes .agent/ and .agent/.env.agent...');
   const gitignoreContent = fs.readFileSync(path.join(tmpTestDir, '.gitignore'), 'utf-8');
-  if (!gitignoreContent.includes('.agent/.env.agent')) {
-    throw new Error('.gitignore does not ignore .agent/.env.agent');
+  if (!gitignoreContent.includes('.agent/') || !gitignoreContent.includes('.agent/.env.agent')) {
+    throw new Error('.gitignore does not properly ignore .agent/ or .agent/.env.agent');
   }
   console.log('   ✅ .gitignore protection verified.');
 

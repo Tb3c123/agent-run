@@ -1,0 +1,4 @@
+# Agent-Pack (Local AI Assistant & SDLC tools)
+.agent/
+.agent
+.agent/.env.agent
